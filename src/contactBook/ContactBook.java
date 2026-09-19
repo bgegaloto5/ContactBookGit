@@ -1,6 +1,6 @@
 package contactBook;
 
-import contactBook.Contact;
+
 
 public class ContactBook {
     static final int DEFAULT_SIZE = 100;
@@ -65,13 +65,19 @@ public class ContactBook {
         String result = null;
         initializeIterator();
         boolean found = false;
-        while(hasNext() && found == false) {
+        while(hasNext() && !found) {
             if(contacts[currentContact].getPhone()==number){
                 result = contacts[currentContact].getName();
                 found = true;
             }
         }
         return result;
+    }
+
+
+
+    public boolean hasDuplicates(){
+        return false;
     }
 
     private int searchIndex(String name) {
