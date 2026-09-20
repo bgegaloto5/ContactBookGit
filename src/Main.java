@@ -29,6 +29,7 @@ public class Main {
     public static final String SHARED_PHONE_NUMBERS = "There are contacts that share phone numbers.";
     public static final String QUIT_MSG = "Goodbye!";
     public static final String COMMAND_ERROR = "Unknown command.";
+    public static final String PHONE_NOT_EXIST = "Phone number does not exist.";
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
@@ -166,7 +167,7 @@ public class Main {
             String name = cBook.getName(phoneNumber);
             System.out.println(name);
         } catch (NotExistentPhone e){
-            System.out.println(NAME_NOT_EXIST);
+            System.out.println(PHONE_NOT_EXIST);
         }
     }
 

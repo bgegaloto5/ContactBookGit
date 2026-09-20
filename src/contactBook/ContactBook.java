@@ -61,7 +61,7 @@ public class ContactBook {
     }
 
     //recebe um número de telefone e devolve um contacto com esse numero
-    public String getName(int number) {
+    public String getName(int number) throws NotExistentPhone{
         String result = null;
         initializeIterator();
         boolean found = false;
@@ -70,7 +70,9 @@ public class ContactBook {
                 result = contacts[currentContact].getName();
                 found = true;
             }
+            next();
         }
+        if(!found) throw new NotExistentPhone();
         return result;
     }
 
